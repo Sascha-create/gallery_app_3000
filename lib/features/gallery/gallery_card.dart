@@ -14,21 +14,30 @@ class GalleryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Card(
-          child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          SizedBox(
-              //     constraints: BoxConstraints(
-              //         maxWidth: double.infinity, maxHeight: double.maxFinite),
-              height: 170,
-              child: Image.asset(fit: BoxFit.contain, galleryItem.imagePath)),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(galleryItem.imageTitle),
-          ),
-        ],
-      )),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      DetailsScreen(galleryItem: galleryItem)));
+        },
+        child: Card(
+            child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            SizedBox(
+                //     constraints: BoxConstraints(
+                //         maxWidth: double.infinity, maxHeight: double.maxFinite),
+                height: 170,
+                child: Image.asset(fit: BoxFit.contain, galleryItem.imagePath)),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(galleryItem.imageTitle),
+            ),
+          ],
+        )),
+      ),
     );
   }
 }

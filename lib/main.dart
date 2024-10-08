@@ -24,8 +24,8 @@ class MainApp extends StatelessWidget {
               "Gallery 3000"),
         ),
         body: GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2),
           itemBuilder: (context, index) =>
               GalleryCard(galleryItem: galleryData[index]),
           itemCount: galleryData.length,
@@ -41,19 +41,39 @@ class MainApp extends StatelessWidget {
 }
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key, required this.index});
+  const DetailsScreen({super.key, required this.galleryItem});
 
-  final int index;
+  final GalleryItem galleryItem;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(galleryData[index].imagePath),
-        Text(galleryData[index].imageTitle),
-        Text(galleryData[index].imageDate),
-        Text(galleryData[index].imageDescription),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: const Text(
+            style: TextStyle(
+                fontSize: 28, fontWeight: FontWeight.w700, color: Colors.white),
+            "Details"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(height: 320, child: Image.asset(galleryItem.imagePath)),
+            Text(
+                style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                galleryItem.imageTitle),
+            Text(
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                galleryItem.imageDate),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                  style: const TextStyle(fontSize: 16), galleryItem.imageDescription),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
