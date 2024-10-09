@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gallery_app_3000/features/gallery/gallery_card.dart';
+import 'package:gallery_app_3000/features/gallery/widgets/gallery_card.dart';
 import 'package:gallery_app_3000/features/gallery/gallery_data.dart';
 
 class GalleryScreen extends StatelessWidget {

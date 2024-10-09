@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gallery_app_3000/features/gallery/gallery_data.dart';
-import 'package:gallery_app_3000/features/gallery/gallery_item.dart';
+import 'package:gallery_app_3000/features/gallery/models/gallery_item.dart';
 import 'package:gallery_app_3000/features/gallery/screens/details_screen.dart';
-import 'package:gallery_app_3000/main.dart';
 
 class GalleryCard extends StatelessWidget {
   const GalleryCard({
@@ -33,8 +31,9 @@ class GalleryCard extends StatelessWidget {
                     child:
                         Image.asset(fit: BoxFit.cover, galleryItem.imagePath)),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(galleryItem.imageTitle),
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: Text(
+                      style: const TextStyle(fontSize: 16), galleryItem.imageTitle),
                 ),
               ],
             )),

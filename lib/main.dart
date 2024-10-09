@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gallery_app_3000/features/gallery/gallery_card.dart';
 import 'package:gallery_app_3000/features/gallery/screens/gallery_screen.dart';
 import 'package:gallery_app_3000/features/profile/profile_screen.dart';
-import 'features/gallery/gallery_item.dart';
-import 'features/gallery/gallery_data.dart';
 
 void main() {
   runApp(const HomeApp());
@@ -25,9 +22,12 @@ class _HomeAppState extends State<HomeApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.grey.shade200,
         appBar: AppBar(
+          actionsIconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.deepPurple,
+          elevation: 2,
+          shadowColor: Colors.grey,
           title: const Text(
               style: TextStyle(
                   fontSize: 28,
@@ -37,6 +37,8 @@ class _HomeAppState extends State<HomeApp> {
         ),
         body: screens[currentIndex],
         bottomNavigationBar: NavigationBar(
+            backgroundColor: Colors.deepPurple.shade100,
+            indicatorColor: Colors.deepPurple.shade200,
             selectedIndex: currentIndex,
             onDestinationSelected: (int index) {
               currentIndex = index;
