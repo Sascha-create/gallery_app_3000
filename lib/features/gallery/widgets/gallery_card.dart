@@ -23,20 +23,10 @@ class GalleryCard extends StatelessWidget {
         },
         child: Card(
             clipBehavior: Clip.hardEdge,
-            child: Column(
-              children: [
-                SizedBox(
-                    width: double.infinity,
-                    height: 170,
-                    child:
-                        Image.asset(fit: BoxFit.cover, galleryItem.imagePath)),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                  child: Text(
-                      style: const TextStyle(fontSize: 16), galleryItem.imageTitle),
-                ),
-              ],
-            )),
+            child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: Image.asset(fit: BoxFit.cover, galleryItem.imagePath))),
       ),
     );
   }
