@@ -16,7 +16,7 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> {
   int currentIndex = 0;
 
-  List<Widget> screens = [GalleryScreen(), ProfileScreen()];
+  List<Widget> screens = const [GalleryScreen(), ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _HomeAppState extends State<HomeApp> {
       home: Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: AppBar(
-          actionsIconTheme: IconThemeData(color: Colors.white),
+          actionsIconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.deepPurple,
           elevation: 2,
           shadowColor: Colors.grey,
