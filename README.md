@@ -1,6 +1,6 @@
 # gallery_app_3000
 
-<img src="screenshots/gallery_screen.png" width="200" /> <img src="screenshots/details_screen.png" width="200" /> <img src="screenshots/image_fullscreen.png" width="200" /> <img src="screenshots/profile_screen.png" width="200" />
+<img src="screenshots/gallery_screen.png" width="200" > <img src="screenshots/details_screen.png" width="200" /> <img src="screenshots/image_fullscreen.png" width="200" /> <img src="screenshots/profile_screen.png" width="200" />
 
 ## Eine kleine Bildergallerie App
 
